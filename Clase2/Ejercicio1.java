@@ -11,6 +11,8 @@ public class Ejercicio1 {
         
         // Mostrar los elementos del arreglo
         System.out.println(op.mostrarElementos(a));
+        System.out.println("La suma de los elementos del vector es igual a: "+ op.sumaElementos(a));
+        System.out.println("El promedio de los elementos del vector es igual a: "+ op.promedioElementos(a));
 
     
     }
