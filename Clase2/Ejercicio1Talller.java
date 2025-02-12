@@ -48,7 +48,7 @@ public class Ejercicio1Talller {
         System.out.println("  Neto a pagar: " + neto);
     }
     */
-    //Ejercicio #3
+    /*    //Ejercicio #3
 
     VectorEntero vectorsuma = new VectorEntero();
     System.out.print("Digite el tamaño del vector ");
@@ -59,9 +59,21 @@ public class Ejercicio1Talller {
 
     System.out.println("La suma de los elementos pares del vector es:  " + vectorsuma.sumaPar());
     System.out.println("La suma de los elementos impares del vector es:  " + vectorsuma.sumaImpar());
-
+    */
     
+    VectorEntero vectorEdad1 = new VectorEntero();
+    VectorEntero vectorEdad2 = new VectorEntero();
+    System.out.print("Digite el número de personas que tendra cada lista: ");
+    int n = sc.nextInt();
+    vectorEdad1.set(n);
+    vectorEdad1.llenadoAutomatico(1, 5 * n);
+    vectorEdad1.imprimirVertical();
 
+    vectorEdad2.set(n);
+    vectorEdad2.llenadoAutomatico(1, 5 * n);
+    vectorEdad2.imprimirVertical();
+    
+    System.out.println("La edad mayor entre ambas listas es de:  " + vectorEdad1.edadMayor(vectorEdad2));
         
 
 

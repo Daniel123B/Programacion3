@@ -56,7 +56,7 @@ public class VectorEntero {
         int suma = 0;
         for (int i = 0; i < n; i++)
             if (v[i] % 2 == 0)
-                suma+= v[i];
+                suma += v[i];
         return suma;
     }
 
@@ -66,6 +66,22 @@ public class VectorEntero {
             if (v[i] % 2 != 0)
                 suma += v[i];
         return suma;
+    }
+
+    public int edadMayor(VectorEntero SegundoVector){
+        int mayor = v[0];
+        for(int i = 1; i < n; i++){
+            if(v[i]> mayor){
+                mayor = v[i];
+            }
+        }
+        
+        for (int i = 0; i < SegundoVector.n; i++) {
+            if (SegundoVector.v[i] > mayor) {
+                mayor = SegundoVector.v[i];
+            }    
+        }
+        return mayor;
     }
 
     public void imprimirVertical() {
