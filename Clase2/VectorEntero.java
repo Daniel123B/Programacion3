@@ -29,8 +29,8 @@ public class VectorEntero {
         }
     }
 
-    public int getVector(int nx){
-        return  v[nx];
+    public int getVector(int nx) {
+        return v[nx];
     }
 
     private int aleatorio(int min, int max) {
@@ -52,10 +52,26 @@ public class VectorEntero {
         return suma;
     }
 
+    public int sumaPar() {
+        int suma = 0;
+        for (int i = 0; i < n; i++)
+            if (v[i] % 2 == 0)
+                suma+= v[i];
+        return suma;
+    }
+
+    public int sumaImpar() {
+        int suma = 0;
+        for (int i = 0; i < n; i++)
+            if (v[i] % 2 != 0)
+                suma += v[i];
+        return suma;
+    }
+
     public void imprimirVertical() {
         System.out.println("\nIMPRESION VERTICAL");
-        for(int i=0; i < n; i++)
+        for (int i = 0; i < n; i++)
             System.out.println("v[" + i + "]= " + v[i]);
-    }        
+    }
 
 }
