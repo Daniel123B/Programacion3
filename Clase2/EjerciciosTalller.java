@@ -1,6 +1,7 @@
 package Clase2;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class EjerciciosTalller {
     public static void main(String[] args) {
@@ -140,9 +141,9 @@ public class EjerciciosTalller {
           vector9.imprimirValorRepetido(valorABuscar1);
          */
 
-         //Ejercicio 10
+        /*  //Ejercicio 10
 
-         VectorEntero vector10 = new VectorEntero();
+          VectorEntero vector10 = new VectorEntero();
           System.out.print("Digite el tamaño del vector ");
           int n = sc.nextInt();
           vector10.set(n);
@@ -153,7 +154,26 @@ public class EjerciciosTalller {
           VectorEntero resultado = vector10.sumaExtremos();
           System.out.println("Vector nuevo con la suma de sus extremos: ");
           resultado.imprimirHorizontal();
+        */
+        
+        //Ejercicio 11
+          VectorEntero vector11 = new VectorEntero();
+          System.out.print("Digite el tamaño del vector ");
+          int n = sc.nextInt();
+          vector11.set(n);
+          vector11.llenadoAutomatico(-2 * n, 2 * n);
+          vector11.imprimirHorizontal();
 
+          int[] conteos = vector11.contarElementos();
+          int[][] resultado = vector11.dividirVector();
+
+          System.out.println("El vector con los elementos positivos: "+ Arrays.toString(resultado[0]));
+          System.out.println("El vector con los elementos negativos: "+ Arrays.toString(resultado[1]));
+          System.out.println("El vector con los elementos ceros: "+ Arrays.toString(resultado[2]));
+
+
+    
+      
 
 
     }

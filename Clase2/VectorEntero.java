@@ -192,6 +192,43 @@ public class VectorEntero {
 
     }
 
+    public int[] contarElementos(){
+        int contPos = 0, contNeg = 0, contCeros = 0;
+        for (int i = 0; i < n; i++) {
+            if (v[i] > 0) {
+                contPos++;
+            }
+            else if (v[i] < 0) {
+                contNeg++;
+            }
+            else contCeros++;
+            
+        }
+        return new int[]{contPos,contNeg,contCeros};
+    }
+
+    public int[][] dividirVector(){
+        int[] conteos = contarElementos();
+        int contPos = conteos[0], contNeg = conteos[1], contCeros = conteos[2];
+
+        int [] positivos = new int[contPos];
+        int [] negativos = new int[contNeg];
+        int [] ceros = new int[contCeros];
+
+        int iPos = 0, iNeg = 0, iCeros = 0;
+
+        for ( int i = 0; i < n; i++) {
+            if (v[i]> 0) {
+                positivos[iPos++] = v[i];
+            }
+            else if (v[i]<0) {
+                negativos[iNeg++] =  v[i];
+            }
+            else ceros[iCeros++] = v[i];
+        }
+        return new int[][]{positivos,negativos,ceros};
+    }
+
     public void imprimirValorRepetido(int valor) {
         if (elementoRepetido(valor) > 0)
             System.out.println("El valor " + valor + " se repite " + elementoRepetido(valor) + " veces en el vector");
