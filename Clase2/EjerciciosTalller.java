@@ -127,7 +127,7 @@ public class EjerciciosTalller {
           " y se repeti " + vector8.elementoRepetidoMayor(numayor) + " veces");
          */
         
-         //ejercicio 9
+         /* //ejercicio 9
          VectorEntero vector9 = new VectorEntero();
           System.out.print("Digite el tamaño del vector: ");
           int n = sc.nextInt();
@@ -138,6 +138,22 @@ public class EjerciciosTalller {
           System.out.print("Digite el valor que desea buscar en el vector: ");
           int valorABuscar1 = sc.nextInt();
           vector9.imprimirValorRepetido(valorABuscar1);
+         */
+
+         //Ejercicio 10
+
+         VectorEntero vector10 = new VectorEntero();
+          System.out.print("Digite el tamaño del vector ");
+          int n = sc.nextInt();
+          vector10.set(n);
+          vector10.llenadoAutomatico(-2 * n, 2 * n);
+          System.out.println("El vector original es: ");
+          vector10.imprimirHorizontal();
+
+          VectorEntero resultado = vector10.sumaExtremos();
+          System.out.println("Vector nuevo con la suma de sus extremos: ");
+          resultado.imprimirHorizontal();
+
 
 
     }

@@ -176,9 +176,27 @@ public class VectorEntero {
 
     }
 
-    public void imprimirValorRepetido(int valor){
-        if(elementoRepetido(valor)> 0)
-        System.out.println("El valor "+valor+" se repite "+elementoRepetido(valor)+" veces en el vector");
+    public VectorEntero sumaExtremos() {
+        int nuevoTamaño = (n + 1) / 2;
+        VectorEntero resultado = new VectorEntero(nuevoTamaño);
+
+        for (int i = 0; i < nuevoTamaño; i++) {
+            if (i == n - 1 - i) {
+                resultado.v[i] = v[i];
+            } else {
+                resultado.v[i] = v[i] + v[n - 1 - i];
+
+            }
+        }
+        return resultado;
+
+    }
+
+    public void imprimirValorRepetido(int valor) {
+        if (elementoRepetido(valor) > 0)
+            System.out.println("El valor " + valor + " se repite " + elementoRepetido(valor) + " veces en el vector");
+        else
+            System.out.println("El valor " + valor + " no se encuentra en el vector.");
 
     }
 
@@ -188,14 +206,13 @@ public class VectorEntero {
             System.out.println("v[" + i + "]= " + v[i]);
     }
 
-    public void imprimirHorizontal()
-    {
-             for(int i=0; i<n; i++)
-            if( (i + 1) % 20 != 0 )
+    public void imprimirHorizontal() {
+        for (int i = 0; i < n; i++)
+            if ((i + 1) % 20 != 0)
                 System.out.print(v[i] + " ");
             else
                 System.out.println(v[i] + " ");
         System.out.println("");
-    }         
+    }
 
 }
