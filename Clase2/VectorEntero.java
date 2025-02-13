@@ -55,7 +55,7 @@ public class VectorEntero {
     public int sumaPar() {
         int suma = 0;
         for (int i = 0; i < n; i++)
-            if (v[i] % 2 == 0){
+            if (v[i] % 2 == 0) {
                 suma += v[i];
             }
         return suma;
@@ -64,7 +64,7 @@ public class VectorEntero {
     public int sumaImpar() {
         int suma = 0;
         for (int i = 0; i < n; i++)
-            if (v[i] % 2 != 0){
+            if (v[i] % 2 != 0) {
                 suma += v[i];
             }
         return suma;
@@ -124,41 +124,62 @@ public class VectorEntero {
         return impares;
     }
 
-    public int nMayor(){
+    public int nMayor() {
         int numayor = v[0];
-        for(int i = 1; i < n; i++){
-            if(v[i]> numayor){
+        for (int i = 1; i < n; i++) {
+            if (v[i] > numayor) {
                 numayor = v[i];
             }
         }
         return numayor;
     }
 
-    public int nMenor(){
+    public int nMenor() {
         int numenor = v[0];
-        for(int i = 1; i < n; i++){
-            if(v[i]< numenor){
+        for (int i = 1; i < n; i++) {
+            if (v[i] < numenor) {
                 numenor = v[i];
             }
         }
         return numenor;
     }
-    public int elementoRepetidoMayor(int numayor) 
-    {
+
+    public int elementoRepetidoMayor(int numayor) {
         int contador = 0;
-        for (int i = 0; i < n; i++) 
-            if (v[i] == numayor) 
+        for (int i = 0; i < n; i++)
+            if (v[i] == numayor)
                 contador++;
         return contador;
     }
 
-    public int elementoRepetidoMenor(int numenor) 
-    {
+    public int elementoRepetidoMenor(int numenor) {
         int contador = 0;
-        for (int i = 0; i < n; i++) 
-            if (v[i] == numenor) 
+        for (int i = 0; i < n; i++)
+            if (v[i] == numenor)
                 contador++;
         return contador;
+    }
+
+    public int elementoRepetido(int valor) {
+        int contador = 0;
+        for (int i = 0; i < n; i++)
+            if (v[i] == valor)
+                contador++;
+        return contador;
+    }
+
+    private boolean buscarElemento(int valor) {
+        for (int i = 0; i < n; i++)
+            if (v[i] == valor)
+                return true;
+        return false;
+
+    }
+
+    public void imprimirValorRepetido(int valor){
+        if(elementoRepetido(valor)> 0)
+        System.out.println("El valor "+valor+" se repite "+elementoRepetido(valor)+" veces en el vector");
+
     }
 
     public void imprimirVertical() {
@@ -166,5 +187,15 @@ public class VectorEntero {
         for (int i = 0; i < n; i++)
             System.out.println("v[" + i + "]= " + v[i]);
     }
+
+    public void imprimirHorizontal()
+    {
+             for(int i=0; i<n; i++)
+            if( (i + 1) % 20 != 0 )
+                System.out.print(v[i] + " ");
+            else
+                System.out.println(v[i] + " ");
+        System.out.println("");
+    }         
 
 }
