@@ -85,29 +85,43 @@ public class EjerciciosTalller {
          * vectorEdad1.edadMayor(vectorEdad2));
          */
 
-        // Ejercicio 7
+        /*
+         * // Ejercicio 7
+         * 
+         * VectorEntero vector7 = new VectorEntero();
+         * System.out.print("A continuacion los 10 numeros del vector: ");
+         * vector7.set(10);
+         * vector7.llenadoAutomatico(-2 * 10, 2 * 10);
+         * vector7.imprimirVertical();
+         * 
+         * int[] pares = vector7.obtenerPares();
+         * System.out.println("\nNúmeros pares:");
+         * System.out.print("[");
+         * for (int num : pares) {
+         * System.out.print(num + " ");
+         * }
+         * System.out.print("]");
+         * 
+         * int[] impares = vector7.obtenerImpares();
+         * System.out.println("\nNúmeros impares:");
+         * System.out.print("[");
+         * for (int num : impares) {
+         * System.out.print(num + " ");
+         * }
+         * System.out.print("]");
+         */
 
-        VectorEntero vector7 = new VectorEntero();
+        // Ejercico 8
+
+        VectorEntero vector8 = new VectorEntero();
         System.out.print("A continuacion los 10 numeros del vector: ");
-        vector7.set(10);
-        vector7.llenadoAutomatico(-2 * 10, 2 * 10);
-        vector7.imprimirVertical();
+        vector8.set(30);
+        vector8.llenadoAutomatico(-2 * 10, 2 * 10);
+        vector8.imprimirVertical();
+        int numayor = vector8.nMayor();
 
-        int[] pares = vector7.obtenerPares();
-        System.out.println("\nNúmeros pares:");
-        System.out.print("[");
-        for (int num : pares) {
-            System.out.print(num + " ");
-        }
-        System.out.print("]");
-
-        int[] impares = vector7.obtenerImpares();
-        System.out.println("\nNúmeros impares:");
-        System.out.print("[");
-        for (int num : impares) {
-            System.out.print(num + " ");
-        }
-        System.out.print("]");
+        System.out.println("El numero mayor del vector es: " + numayor +
+                " y se repeti " + vector8.elementoRepetidoMayor(numayor) + " veces");
 
     }
 }

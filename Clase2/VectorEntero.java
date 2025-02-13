@@ -55,71 +55,110 @@ public class VectorEntero {
     public int sumaPar() {
         int suma = 0;
         for (int i = 0; i < n; i++)
-            if (v[i] % 2 == 0)
+            if (v[i] % 2 == 0){
                 suma += v[i];
+            }
         return suma;
     }
 
     public int sumaImpar() {
         int suma = 0;
         for (int i = 0; i < n; i++)
-            if (v[i] % 2 != 0)
+            if (v[i] % 2 != 0){
                 suma += v[i];
+            }
         return suma;
     }
 
-    public int edadMayor(VectorEntero SegundoVector){
+    public int edadMayor(VectorEntero SegundoVector) {
         int mayor = v[0];
-        for(int i = 1; i < n; i++){
-            if(v[i]> mayor){
+        for (int i = 1; i < n; i++) {
+            if (v[i] > mayor) {
                 mayor = v[i];
             }
         }
-        
+
         for (int i = 0; i < SegundoVector.n; i++) {
             if (SegundoVector.v[i] > mayor) {
                 mayor = SegundoVector.v[i];
-            }    
+            }
         }
         return mayor;
     }
 
-    public int elementoPar(){
-       int contador = 0; 
-       for (int i = 0; i < n; i++)
-       if (v[i] % 2 == 0){
-           contador ++;
-        }
+    public int elementoPar() {
+        int contador = 0;
+        for (int i = 0; i < n; i++)
+            if (v[i] % 2 == 0) {
+                contador++;
+            }
         return contador;
     }
 
-    public int elementoImpar(){
-        int contador = 0; 
+    public int elementoImpar() {
+        int contador = 0;
         for (int i = 0; i < n; i++)
-        if (v[i] % 2 != 0){
-            contador ++;
-         }
-         return contador;
-     }
+            if (v[i] % 2 != 0) {
+                contador++;
+            }
+        return contador;
+    }
 
-    public int[] obtenerPares(){
+    public int[] obtenerPares() {
         int[] pares = new int[elementoPar()];
         int contador = 0;
         for (int i = 0; i < n; i++)
-            if (v[i] % 2 == 0){
+            if (v[i] % 2 == 0) {
                 pares[contador++] = v[i];
             }
         return pares;
     }
 
-    public int[] obtenerImpares(){
+    public int[] obtenerImpares() {
         int[] impares = new int[elementoImpar()];
         int contador = 0;
         for (int i = 0; i < n; i++)
-            if (v[i] % 2 != 0){
+            if (v[i] % 2 != 0) {
                 impares[contador++] = v[i];
             }
         return impares;
+    }
+
+    public int nMayor(){
+        int numayor = v[0];
+        for(int i = 1; i < n; i++){
+            if(v[i]> numayor){
+                numayor = v[i];
+            }
+        }
+        return numayor;
+    }
+
+    public int nMenor(){
+        int numenor = v[0];
+        for(int i = 1; i < n; i++){
+            if(v[i]< numenor){
+                numenor = v[i];
+            }
+        }
+        return numenor;
+    }
+    public int elementoRepetidoMayor(int numayor) 
+    {
+        int contador = 0;
+        for (int i = 0; i < n; i++) 
+            if (v[i] == numayor) 
+                contador++;
+        return contador;
+    }
+
+    public int elementoRepetidoMenor(int numenor) 
+    {
+        int contador = 0;
+        for (int i = 0; i < n; i++) 
+            if (v[i] == numenor) 
+                contador++;
+        return contador;
     }
 
     public void imprimirVertical() {
