@@ -84,6 +84,44 @@ public class VectorEntero {
         return mayor;
     }
 
+    public int elementoPar(){
+       int contador = 0; 
+       for (int i = 0; i < n; i++)
+       if (v[i] % 2 == 0){
+           contador ++;
+        }
+        return contador;
+    }
+
+    public int elementoImpar(){
+        int contador = 0; 
+        for (int i = 0; i < n; i++)
+        if (v[i] % 2 != 0){
+            contador ++;
+         }
+         return contador;
+     }
+
+    public int[] obtenerPares(){
+        int[] pares = new int[elementoPar()];
+        int contador = 0;
+        for (int i = 0; i < n; i++)
+            if (v[i] % 2 == 0){
+                pares[contador++] = v[i];
+            }
+        return pares;
+    }
+
+    public int[] obtenerImpares(){
+        int[] impares = new int[elementoImpar()];
+        int contador = 0;
+        for (int i = 0; i < n; i++)
+            if (v[i] % 2 != 0){
+                impares[contador++] = v[i];
+            }
+        return impares;
+    }
+
     public void imprimirVertical() {
         System.out.println("\nIMPRESION VERTICAL");
         for (int i = 0; i < n; i++)
