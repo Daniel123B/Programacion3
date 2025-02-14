@@ -33,6 +33,10 @@ public class VectorEntero {
         return v[nx];
     }
 
+    public int getN() {
+        return n;
+    }
+
     private int aleatorio(int min, int max) {
         return (int) (Math.random() * (max - min + 1) + min);
     }
@@ -168,12 +172,34 @@ public class VectorEntero {
         return contador;
     }
 
-    private boolean buscarElemento(int valor) {
-        for (int i = 0; i < n; i++)
-            if (v[i] == valor)
+    public boolean buscarElemento(int valor) {
+        for (int i = 0; i < n; i++){
+            if (v[i] == valor){
                 return true;
+            }
+        }
         return false;
 
+    }
+
+    public VectorEntero buscarPosicionesVector(int valor){
+        int contador = 0;
+
+        for(int i = 0; i < n; i++){
+            if (v[i] == valor) {
+                contador ++;
+            }
+        }
+
+        VectorEntero posicionesVector = new VectorEntero(contador);
+        int cont = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (v[i] == valor) {
+                posicionesVector.v[cont++] = i + 1;
+            }
+        }
+        return posicionesVector;
     }
 
     public VectorEntero sumaExtremos() {
@@ -243,6 +269,8 @@ public class VectorEntero {
             System.out.println("v[" + i + "]= " + v[i]);
     }
 
+    
+
     public void imprimirHorizontal() {
         for (int i = 0; i < n; i++)
             if ((i + 1) % 20 != 0)
@@ -251,5 +279,7 @@ public class VectorEntero {
                 System.out.println(v[i] + " ");
         System.out.println("");
     }
+       
+    
 
 }

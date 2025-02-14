@@ -3,7 +3,7 @@ package Clase2;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class EjerciciosTalller {
+public class EjerciciosTaller {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -156,7 +156,7 @@ public class EjerciciosTalller {
           resultado.imprimirHorizontal();
         */
         
-        //Ejercicio 11
+        /* //Ejercicio 11
           VectorEntero vector11 = new VectorEntero();
           System.out.print("Digite el tamaño del vector ");
           int n = sc.nextInt();
@@ -170,7 +170,32 @@ public class EjerciciosTalller {
           System.out.println("El vector con los elementos positivos: "+ Arrays.toString(resultado[0]));
           System.out.println("El vector con los elementos negativos: "+ Arrays.toString(resultado[1]));
           System.out.println("El vector con los elementos ceros: "+ Arrays.toString(resultado[2]));
+        */
 
+        // Ejercicio 12
+
+        VectorEntero vector12 = new VectorEntero();
+        System.out.print("Digite el tamaño del vector ");
+        int n = sc.nextInt();
+        vector12.set(n);
+        vector12.llenadoAutomatico(-2 * n, 2 * n);
+        vector12.imprimirHorizontal();
+
+        System.out.println("Ingrese el valor a buscar: ");
+        int x = sc.nextInt();
+
+        VectorEntero posicionesVector = vector12.buscarPosicionesVector(x);
+
+        if (posicionesVector.getN() > 0) {
+          System.out.println("El número "+ x + " aparece en las posiciones: ");
+          posicionesVector.imprimirHorizontal();
+        } else {
+          System.out.println("El numero "+ x + " no aparece en las posiciones: ");
+        }
+
+
+
+        
 
     
       
