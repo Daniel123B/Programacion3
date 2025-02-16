@@ -87,7 +87,8 @@ public class EjerciciosTaller {
           vectorEdad1.edadMayor(vectorEdad2));
          */
         
-        //Ejercicio 5
+         /* 
+         //Ejercicio 5
 
          VectorDoble vector5 = new VectorDoble();
           System.out.print("Digite el numero de productos: ");
@@ -116,7 +117,35 @@ public class EjerciciosTaller {
           System.out.println("\nEl total general de todas las compras es: "+totalGeneral);
 
           System.out.println("\nProducto con mayor gasto: "+vector5.productoMayorGasto());
-        
+        */
+
+        //Ejercicio 6
+        System.out.println("Digite el numero de viviendas: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        double[] alquileres = new double[n];
+        double[] porcentajes = new double[n];
+        double[] ganancias = new double[n];
+
+        for(int i = 0; i < n; i++){
+          System.out.println("Ingrese el alquiler mensual de la vivienda "+ (i + 1)+" : ");
+          alquileres[i] = sc.nextDouble();
+        }
+        for(int i = 0; i < n; i++){
+          System.out.println("Ingrese el porcentaje de ganancia de la vivienda "+ (i + 1)+" : ");
+          porcentajes[i] = sc.nextDouble();
+        }
+
+        for(int i = 0; i < n; i++){
+          ganancias[i] = alquileres[i] * (porcentajes[i] / 100);
+        }
+
+        System.out.println("Ganancia por cada vivienda: ");
+        for(int i = 0; i < n; i++){
+          System.out.println("Vivienda "+ (i + 1)+": "+ganancias[i]);
+        }
+
 
         /*
           // Ejercicio 7
@@ -265,8 +294,9 @@ public class EjerciciosTaller {
         menorArreglo.imprimirHorizontal();
 
         */
-       
-        /* //Ejercicio 15
+        
+        /* 
+         //Ejercicio 15
 
         VectorDoble vector15 = new VectorDoble();
         System.out.print("Digite el numero de trabajadores: ");
