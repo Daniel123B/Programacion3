@@ -86,6 +86,37 @@ public class EjerciciosTaller {
           System.out.println("La edad mayor entre ambas listas es de:  " +
           vectorEdad1.edadMayor(vectorEdad2));
          */
+        
+        //Ejercicio 5
+
+         VectorDoble vector5 = new VectorDoble();
+          System.out.print("Digite el numero de productos: ");
+          int n = sc.nextInt();
+          vector5.set(n);
+          sc.nextLine();
+
+          for (int i = 0; i < n; i++){
+            System.out.println("Ingrese la descripcion del producto "+(i + 1) +": ");
+            vector5.s[i] = sc.nextLine();
+
+            System.out.println("Ingrese el precio unitario del producto "+(i + 1) + ": ");
+            vector5.d[i] = sc.nextDouble();
+
+            System.out.println("Ingrese la cantidad comprada del producto "+(i + 1) + ": ");
+            vector5.d2[i] = sc.nextDouble();
+            sc.nextLine();
+          }
+
+          vector5.calcularTotalGastado();
+
+          System.out.println("\nTotal gastado por producto: ");
+          vector5.imprimirTotalGastado();
+
+          double totalGeneral = vector5.calcularTotalGeneral();
+          System.out.println("\nEl total general de todas las compras es: "+totalGeneral);
+
+          System.out.println("\nProducto con mayor gasto: "+vector5.productoMayorGasto());
+        
 
         /*
           // Ejercicio 7
@@ -259,9 +290,9 @@ public class EjerciciosTaller {
         }
       
        */
-
+       
+       /* 
        // Ejercicio 16
-
        System.out.print("Digite el numero de profesores: ");
         int n = sc.nextInt();
         sc.nextLine();
@@ -318,8 +349,9 @@ public class EjerciciosTaller {
 
         System.out.println("Número de profesoras con edad mayor al promedio: " + contadorF);
         System.out.println("Número de profesores con edad menor al promedio: " + contadorM);
-
-
+      
+        */
+    
 
 
 

@@ -1,14 +1,18 @@
 package Clase2;
 
 public class VectorDoble {
-    private String[] s;
-    private double[] d;
+    public String[] s;
+    public double[] d;
+    public double[] d2;
+    public double[] tg;
     private int n;
 
     public VectorDoble() {
         n = 0;
         s = null;
         d = null;
+        d2 = null;
+        tg = null;
     }
 
     public VectorDoble(int nx){
@@ -16,10 +20,15 @@ public class VectorDoble {
             n = nx;
             s = new String[n];
             d = new double[n];
+            d2 = new double[n];
+            tg = new double[n];
+
         } else {
             n = 0;
             s = null;
             d = null;
+            d2 = null;
+            tg = null;
         }
     }
 
@@ -28,10 +37,14 @@ public class VectorDoble {
             n = nx;
             s = new String[n];
             d = new double[n];
+            d2 = new double[n];
+            tg = new double[n];
         } else {
             n = 0;
             s = null;
             d = null;
+            d2 = null;
+            tg = null;
         }
     }
 
@@ -97,6 +110,40 @@ public class VectorDoble {
             }
         }
         return vectorTrabajadores;
+    }
+   
+    // Metodo para realizar ejercicio 5
+
+    public void calcularTotalGastado(){
+        for (int i = 0; i < n; i++){
+            tg[i] = d[i] * d2[i];
+        }
+    }
+
+    public double calcularTotalGeneral(){
+        double total = 0;
+        for (int i = 0; i < n; i++){
+            total += tg[i];
+        }
+        return total;
+    }
+
+    public String productoMayorGasto(){
+        int contador = 0;
+        for (int i = 0; i < n; i++){
+            if (tg[i] > tg[contador]) {
+                contador = i;
+            }
+        }
+        return "Descripcion: " + s[contador] + ", total gastado: "+ tg[contador];
+
+    }
+
+    public void imprimirTotalGastado(){
+        System.out.println("Total gastado por producto: ");
+        for (int i = 0; i < n; i++){
+            System.out.println("Producto: "+ s[i]+ "- Total gastado: "+tg[i]);
+        }
     }
  
 
