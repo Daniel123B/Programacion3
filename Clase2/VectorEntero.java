@@ -308,6 +308,14 @@ public class VectorEntero {
         return mayores;
     }
 
+    public VectorEntero arregloMenor(){
+        VectorEntero menorArreglo = new VectorEntero(n-1);
+        for(int i = 0; i < n - 1; i++){
+         menorArreglo.v[i] = v[i] - v[i+1];
+        }
+        return menorArreglo;
+    }
+
     public void imprimirValorRepetido(int valor) {
         if (elementoRepetido(valor) > 0)
             System.out.println("El valor " + valor + " se repite " + elementoRepetido(valor) + " veces en el vector");

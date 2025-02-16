@@ -196,7 +196,8 @@ public class EjerciciosTaller {
         }
         
         */
-
+        
+        /* 
         //Ejercicio 13
 
         VectorEntero vector13 = new VectorEntero();
@@ -216,9 +217,21 @@ public class EjerciciosTaller {
         VectorEntero menores = vector13.MenoresMedia();
         System.out.println("Los elementos menores que la media: ");
         menores.imprimirHorizontal();
+        */
+      
+        // Ejercico 14
 
-
+        VectorEntero vector14 = new VectorEntero();
+        System.out.print("Digite el tamaño del vector ");
+        int n = sc.nextInt();
+        vector14.set(n);
+        vector14.llenadoAutomatico(-2 * n, 2 * n);
+        vector14.imprimirHorizontal();
         
+        VectorEntero menorArreglo = vector14.arregloMenor();
+        System.out.println("El arreglo resultante es: ");
+        menorArreglo.imprimirHorizontal();
+
 
     
       
