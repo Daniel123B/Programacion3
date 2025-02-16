@@ -235,7 +235,7 @@ public class EjerciciosTaller {
 
         */
        
-        //Ejercicio 15
+        /* //Ejercicio 15
 
         VectorDoble vector15 = new VectorDoble();
         System.out.print("Digite el numero de trabajadores: ");
@@ -257,7 +257,73 @@ public class EjerciciosTaller {
         } else {
             System.out.println("\nNingún trabajador tiene el sueldo promedio exacto.");
         }
+      
+       */
 
+       // Ejercicio 16
+
+       System.out.print("Digite el numero de profesores: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        
+        String[] nombres = new String[n];
+        int[] edades = new int[n];
+        String[] sexo = new String[n];
+
+        for (int i = 0; i < n; i++){
+          System.out.println("Ingrese el nombre del profesor: "+(i + 1)+ ": ");
+          nombres[i] = sc.nextLine();
+
+          System.out.print("Ingrese la edad del profesor " + (i + 1) + ": ");
+          edades[i] = sc.nextInt();
+          sc.nextLine();
+
+          System.out.print("Ingrese el sexo del profesor " + (i + 1) + "(Masculino/Femenino): ");
+          sexo[i] = sc.nextLine();
+        }
+
+        double suma = 0;
+        for (int i = 0; i < n; i++){
+          suma += edades[i];
+        }
+        double promedio = (n > 0) ? suma / n : 0;
+        System.out.println("\nLa edad promedio del grupo de profesores es: "+promedio);
+
+        int mayorEdad = 0;
+        int menorEdad = 0;
+
+        for (int i = 0; i < n; i++){
+          if (edades[i] > edades[mayorEdad]) {
+              mayorEdad = i;  
+          }
+          if (edades[i] < edades[menorEdad]) {
+              menorEdad = i;
+          }
+        }
+
+        System.out.println("Profesor más joven: "+nombres[menorEdad]);
+        System.out.println("Profesor más viejo: "+nombres[mayorEdad]);
+
+        int contadorF = 0;
+        int contadorM = 0;
+
+        for (int i = 0; i < n; i++){
+          if (sexo[i].equalsIgnoreCase("Femenino") && edades[i] > promedio) {
+            contadorF++;
+          }
+          if (sexo[i].equalsIgnoreCase("Masculino") && edades[i] > promedio) {
+            contadorM++;
+          }
+        }
+
+        System.out.println("Número de profesoras con edad mayor al promedio: " + contadorF);
+        System.out.println("Número de profesores con edad menor al promedio: " + contadorM);
+
+
+
+
+
+    
 
     
       
