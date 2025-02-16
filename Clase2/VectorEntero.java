@@ -255,6 +255,59 @@ public class VectorEntero {
         return new int[][]{positivos,negativos,ceros};
     }
 
+    public double calcularMedia(){
+        if (n ==0) {
+            return 0;
+        }
+        return sumaElementos()/ (double)n;
+    }
+
+    public int calcularMayorMedia(){
+        double media = calcularMedia();
+        int contador = 0;
+        for(int i = 0; i < n; i++){
+            if (v[i] > media) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public int calcularMenorMedia(){
+        double media = calcularMedia();
+        int contador = 0;
+        for(int i = 0; i < n; i++){
+            if (v[i] < media) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public VectorEntero MayoresMedia(){
+        int cantidad = calcularMayorMedia();
+        VectorEntero mayores = new VectorEntero(cantidad);
+        int contador = 0;
+        for(int i = 0; i < n; i++){
+            if (v[i] > calcularMedia()) {
+                mayores.v[contador++] = v[i];
+            }
+        }
+        return mayores;
+    }
+
+    public VectorEntero MenoresMedia(){
+        int cantidad = calcularMenorMedia();
+        VectorEntero mayores = new VectorEntero(cantidad);
+        int contador = 0;
+        for(int i = 0; i < n; i++){
+            if (v[i] < calcularMedia()) {
+                mayores.v[contador++] = v[i];
+            }
+        }
+        return mayores;
+    }
+
     public void imprimirValorRepetido(int valor) {
         if (elementoRepetido(valor) > 0)
             System.out.println("El valor " + valor + " se repite " + elementoRepetido(valor) + " veces en el vector");

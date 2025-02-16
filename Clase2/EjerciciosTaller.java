@@ -172,6 +172,8 @@ public class EjerciciosTaller {
           System.out.println("El vector con los elementos ceros: "+ Arrays.toString(resultado[2]));
         */
 
+        
+        /* 
         // Ejercicio 12
 
         VectorEntero vector12 = new VectorEntero();
@@ -192,7 +194,28 @@ public class EjerciciosTaller {
         } else {
           System.out.println("El numero "+ x + " no aparece en las posiciones: ");
         }
+        
+        */
 
+        //Ejercicio 13
+
+        VectorEntero vector13 = new VectorEntero();
+        System.out.print("Digite el tamaño del vector ");
+        int n = sc.nextInt();
+        vector13.set(n);
+        vector13.llenadoAutomatico(-2 * n, 2 * n);
+        vector13.imprimirHorizontal();
+
+        double media = vector13.calcularMedia();
+        System.out.println("La media es: "+ media);
+
+        VectorEntero mayores = vector13.MayoresMedia();
+        System.out.println("Los elementos mayores que la media: ");
+        mayores.imprimirHorizontal();
+
+        VectorEntero menores = vector13.MenoresMedia();
+        System.out.println("Los elementos menores que la media: ");
+        menores.imprimirHorizontal();
 
 
         
