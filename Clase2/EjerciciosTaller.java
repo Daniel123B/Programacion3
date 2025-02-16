@@ -219,7 +219,8 @@ public class EjerciciosTaller {
         menores.imprimirHorizontal();
         */
       
-        // Ejercico 14
+        
+        /* // Ejercico 14
 
         VectorEntero vector14 = new VectorEntero();
         System.out.print("Digite el tamaño del vector ");
@@ -231,6 +232,31 @@ public class EjerciciosTaller {
         VectorEntero menorArreglo = vector14.arregloMenor();
         System.out.println("El arreglo resultante es: ");
         menorArreglo.imprimirHorizontal();
+
+        */
+       
+        //Ejercicio 15
+
+        VectorDoble vector15 = new VectorDoble();
+        System.out.print("Digite el numero de trabajadores: ");
+        int n = sc.nextInt();
+        vector15.set(n);
+        vector15.llenadoAutomaticoTrabajadores(99.9*n, 100*n);
+        vector15.imprimirDatosTrabajadores();
+
+        double promedio = vector15.calcularPromedio();
+        System.out.println("\nEl sueldo promedio es: " +  promedio);
+
+        int cantidadPromedio = vector15.contarSueldoPromedio();
+        System.out.println("Cantidad de trabajadores con sueldo promedio: " + cantidadPromedio);
+
+        VectorDoble trabajadoresPromedio = vector15.obtenerTrabajadoresPromedio();
+        if (trabajadoresPromedio.getN() > 0) {
+            System.out.println("\nTrabajadores con sueldo promedio:");
+            trabajadoresPromedio.imprimirDatosTrabajadores();
+        } else {
+            System.out.println("\nNingún trabajador tiene el sueldo promedio exacto.");
+        }
 
 
     
