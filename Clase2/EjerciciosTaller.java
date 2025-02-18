@@ -118,7 +118,7 @@ public class EjerciciosTaller {
 
           System.out.println("\nProducto con mayor gasto: "+vector5.productoMayorGasto());
         */
-
+   
         //Ejercicio 6
         System.out.println("Digite el numero de viviendas: ");
         int n = sc.nextInt();
