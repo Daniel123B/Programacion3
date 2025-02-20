@@ -69,6 +69,19 @@ public class MatrizEntera {
         }
     }
 
+    public void llenadounosDiagonal() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < x; j++) {
+                if (i == j) {
+                    v[i][j] = 1;
+                    if (i != j) {
+                        v[i][j] = 0;
+                    }
+                }
+            }
+        }
+    }
+
     public void imprimirMatriz() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < x; j++) {
