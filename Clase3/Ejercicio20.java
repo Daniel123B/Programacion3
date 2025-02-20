@@ -6,5 +6,7 @@ public class Ejercicio20 {
         MatrizCeros matriz20 = new MatrizCeros();
 
         matriz20.cerosdiagonal();
+        matriz20.imprimirMatriz();
+        matriz20.mostrarMatriz();
     }
 }

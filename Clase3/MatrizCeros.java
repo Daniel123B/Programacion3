@@ -10,14 +10,14 @@ public class MatrizCeros {
         n = 10;
         x = 10;
         v = new int[n][x];
-        llenadoAutomatico(n, x);
+        llenadoAutomatico();
     }
 
-    public void llenadoAutomatico(int minimo, int maximo) {
+    public void llenadoAutomatico() {
         Random rand = new Random();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < x; j++) {
-                v[i][j] = rand.nextInt(maximo - minimo + 1) + minimo;
+                v[i][j] = rand.nextInt(9)+1;
             }
         }
     }
