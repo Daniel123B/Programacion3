@@ -1,39 +1,44 @@
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class Ejecutar {
-    public static void main(String[]args){
+    public static void main(String[] args) {
         boolean salir = false;
+        Scanner scanner = new Scanner(System.in);
+        
         while (!salir) {
-            String opcion = JOptionPane.showInputDialog(
-                null,
-                "Bienvenido al programa del cine \nPor favor seleccione una opcion:\n1. Opcion 1\n2. Opcion 2\n3. Opcion 3\n4. Salir",
-                "Menu Principal",
-                JOptionPane.QUESTION_MESSAGE
-            );
-
-            if (opcion == null){
-                salir = true;
-            } else{
-                switch (opcion) {  
+            // Imprimir el menú en la consola
+            System.out.println("Bienvenido al programa del cine");
+            System.out.println("Por favor seleccione una opción:");
+            System.out.println("1. Opcion 1");
+            System.out.println("2. Opcion 2");
+            System.out.println("3. Opcion 3");
+            System.out.println("4. Salir");
+            System.out.print("Ingrese su opción: ");
+            
+            // Leer la opción ingresada por el usuario
+            String opcion = scanner.nextLine();
+            
+            // Verificar la opción seleccionada
+            switch (opcion) {
                 case "1":
-                JOptionPane.showMessageDialog(null, "Has seleccionado la Opcion 1");
-                break;
+                    System.out.println("Has seleccionado la Opcion 1");
+                    break;
                 case "2":
-                JOptionPane.showMessageDialog(null, "Has seleccionado la Opcion 2");
-                break;
+                    System.out.println("Has seleccionado la Opcion 2");
+                    break;
                 case "3":
-                JOptionPane.showMessageDialog(null, "Has seleccionado la Opcion 3");
-                break;
+                    System.out.println("Has seleccionado la Opcion 3");
+                    break;
                 case "4":
-                salir = true;
-                break;
+                    salir = true; // Finalizar el bucle si se elige la opción 4
+                    break;
                 default:
-                    JOptionPane.showMessageDialog(null,"Opcion no valida. Intente de nuevo.","Error",JOptionPane.ERROR_MESSAGE);
-                }
-            }      
+                    System.out.println("Opción no válida. Intente de nuevo.");
+            }
         }
-        JOptionPane.showMessageDialog(null,"Programa finalizado");
+        
+        // Mensaje de fin de programa
+        System.out.println("Programa finalizado.");
+        scanner.close();
     }
-
-    
 }
