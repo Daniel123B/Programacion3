@@ -4,6 +4,8 @@ public class Ejecutar {
     public static void main(String[] args) {
         boolean salir = false;
         Scanner scanner = new Scanner(System.in);
+
+ 
         
         while (!salir) {
             // Imprimir el menú en la consola
