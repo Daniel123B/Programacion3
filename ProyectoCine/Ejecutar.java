@@ -9,9 +9,9 @@ public class Ejecutar {
             // Imprimir el menú en la consola
             System.out.println("Bienvenido al programa del cine");
             System.out.println("Por favor seleccione una opción:");
-            System.out.println("1. Opcion 1");
-            System.out.println("2. Opcion 2");
-            System.out.println("3. Opcion 3");
+            System.out.println("1. Ver funciones");
+            System.out.println("2. Ver horarios");
+            System.out.println("3. Comprar boleta");
             System.out.println("4. Salir");
             System.out.print("Ingrese su opción: ");
             
