@@ -10,4 +10,7 @@ public class Pelicula {
         this.tipo = tipo;
         this.duracion = duracion;
     }
+    public String getNombre() {
+        return nombre;
+    }
 }

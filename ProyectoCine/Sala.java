@@ -4,7 +4,7 @@ public class Sala {
     String[][] asientos;
     String[] pelicula;
     int numero;
-    String[] horarios = {"14:00", "16:30", "18:00", "21:00"}; // Horarios disponibles
+    String[] horarios = {"14:00 - 16:30", "16:30 - 19:00", "19:00 - 21:00"}; // Horarios disponibles
     int indiceHorario = 0; // índice para asignar la película
 
     public Sala(int numerox, boolean es3Dx){
@@ -12,28 +12,32 @@ public class Sala {
         numero = numerox;
 
         if (numero == 1 || numero == 2) {
-            asientos = new String[8][]; // 6 filas normales + 2 filas preferenciales
-            for (int i = 0; i < 6; i++){
-                asientos[i] = new String[12]; // Filas normales de 12 asientos
-            }
-            for (int i = 0; i < 8; i++){
-                asientos[i] = new String[9]; // Filas preferenciales con 9 asientos
+            asientos = new String[8][]; // 6 filas normales + 2 preferenciales
+        
+            // Primero se crean todas las filas con el tamaño correcto
+            for (int i = 0; i < 8; i++) {
+                if (i < 6) {
+                    asientos[i] = new String[12]; // Filas normales con 12 asientos
+                } else {
+                    asientos[i] = new String[9]; // Filas preferenciales con 9 asientos
+                }
             }
         } else {
-            asientos = new String[6][12]; // Salas normales con 6 filas
+            asientos = new String[6][12]; // Salas normales con 6 filas de 12 asientos
         }
-
-        pelicula = new String[4];
+        
+        pelicula = new String[3]; // Solo hay 3 horarios
+        inicializarAsientos();
+        
     }
 
     public void inicializarAsientos() {
         for (int i = 0; i < asientos.length; i++) {
             for (int j = 0; j < asientos[i].length; j++) {
-                // Filas G y H en salas 1 y 2 son preferenciales y solo tienen 9 asientos
-                if ((numero == 1 || numero == 2) && (i == 6 || i == 7)) {
-                    asientos[i][j] = "P";  
+                if ((numero == 1 || numero == 2) && (i >= 6)) {
+                    asientos[i][j] = "P";  // Preferenciales
                 } else {
-                    asientos[i][j] = "-";
+                    asientos[i][j] = "-"; // Asientos normales
                 }
             }
         }
@@ -60,27 +64,43 @@ public class Sala {
         }
     }
 
-    public boolean venderBoletos(int fila, int columna) {
+    public void mostrarFunciones() {
+        System.out.println("Funciones de la sala " + numero);
+        for (int i = 0; i < horarios.length; i++) {
+            if (pelicula[i] != null) {
+                System.out.println(horarios[i] + ": " + pelicula[i]);
+            } else {
+                System.out.println(horarios[i] + ": No hay película asignada");
+            }
+        }
+    }
+
+    public boolean venderBoleta(int fila, int columna) {
         if (fila < 0 || fila >= asientos.length || columna < 0 || columna >= asientos[fila].length) {
             return false; // Verificar si la posición está dentro del rango de asientos
         }
-        if (asientos[fila][columna].equals("-") || asientos[fila][columna].equals("p")) { // Verificar si el asiento está vacío
+        if (asientos[fila][columna].equals("X")) { // Verificar si ya está ocupado
+            return false; // No se puede comprar un asiento ya vendido
+        }
+        if (asientos[fila][columna].equals("-") || asientos[fila][columna].equals("P")) { // Verificar si está disponible
             asientos[fila][columna] = "X"; // Marcar el asiento como ocupado
             return true;
         }
-        return false; // Si el asiento ya está ocupado
+        return false; // En caso de que el estado del asiento no sea válido
     }
+    
+    
 
-    public void asignarPelicula(String nombrePelicula, int hora) {
-        if (es3D && !nombrePelicula.contains("3D")) { // Verificar si la sala es 3D
+    public void asignarPelicula(Pelicula pelicula, int hora) {
+        if (es3D && !pelicula.getNombre().contains("3D")) {
             System.out.println("Solo se puede asignar una película 3D a la sala 3D.");
             return;
         }
-
+    
         if (indiceHorario < horarios.length) {
-            pelicula[indiceHorario] = nombrePelicula; // Asignar la película a un horario
-            System.out.println("Película '" + nombrePelicula + "' asignada a la sala " + numero + " a las " + horarios[indiceHorario]);
-            indiceHorario++; // Avanzar al siguiente horario
+            this.pelicula[indiceHorario] = pelicula.getNombre(); // Asignar la película al horario
+            System.out.println("Película '" + pelicula.getNombre() + "' asignada a la sala " + numero + " a las " + horarios[indiceHorario]);
+            indiceHorario++;
         } else {
             System.out.println("No hay más horarios disponibles para asignar películas.");
         }
