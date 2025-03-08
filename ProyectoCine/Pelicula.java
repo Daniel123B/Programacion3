@@ -13,4 +13,7 @@ public class Pelicula {
     public String getNombre() {
         return nombre;
     }
+    public String getTipo() { 
+        return tipo; 
+    }
 }
