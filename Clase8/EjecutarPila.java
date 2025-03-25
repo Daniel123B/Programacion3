@@ -28,5 +28,8 @@ public class EjecutarPila {
     //Imprimir la pila
     System.out.println(nombres); //[Pedro, Juan, Maria, Camila]
 
+    //Verificar elñ tamaño de la pila 
+    System.out.println(nombres.size()); //4
+
     }
 }
