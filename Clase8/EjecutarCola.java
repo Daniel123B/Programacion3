@@ -43,3 +43,7 @@ public class EjecutarCola {
 
     }
 }
+
+
+//https://lc.fie.umich.mx/~a1039048f/nts/Documents/Estructura%20de%20datos%20en%20java%20Joyanes%201ed.pdf
+ 
