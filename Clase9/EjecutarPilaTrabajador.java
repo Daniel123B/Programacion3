@@ -1,0 +1,24 @@
+import java.util.Stack;
+public class EjecutarPilaTrabajador {
+    public static void main(String[] args) {
+      Stack<Trabajador> trabajadores = new Stack<>();  
+
+      Trabajador t1 = new Trabajador("1234","juan",2200.0);
+      Trabajador t2 = new Trabajador("5678","pedro",2500.0);
+      Trabajador t3 = new Trabajador("9012","milena",2800.0);
+
+      trabajadores.push(t1);
+      trabajadores.push(t2);
+      trabajadores.push(t3);
+
+      System.out.println(trabajadores);
+
+
+
+
+
+
+
+
+    }
+}
