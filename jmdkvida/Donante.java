@@ -1,4 +1,7 @@
 package jmdkvida;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Donante extends Usuario {
     private List<Donacion> donaciones;
     private String metodoPago;
