@@ -20,12 +20,14 @@ console.log(factorial(5)); */
 
 function fibonacci(n){
     let a = 0, b = 1;
-    for (let i = 0; i <= n; i++){
+    let arreglo  = [];
+
+    for (let i = 0; i < n; i++){
+        arreglo.push(a);
         let temp = a + b;
         a = b;
         b = temp;
     }
-    return a;
+    return arreglo;
 }
-
 console.log(fibonacci(6));
