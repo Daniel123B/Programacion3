@@ -1,8 +1,8 @@
 public class Cliente {
 
-    private int mesa;
-    private int comensales;
-    private Orden orden; // Composición
+    public int mesa;
+    public int comensales;
+    public Orden orden; // Composición
 
     public Cliente(int mesa, int comensales, int hora, String mesero) {
         this.mesa = mesa;

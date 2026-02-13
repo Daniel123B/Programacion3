@@ -2,12 +2,11 @@ import java.util.ArrayList;
 
 public class Orden {
 
-    private int hora;
-    private String mesero;
-
-    private Pago pago; // Composición
-    private ArrayList<Bebida> bebidas; // Agregación
-    private ArrayList<Platillo> platillos; // Agregación
+    public int hora;
+    public String mesero;
+    public Pago pago; // Composición
+    public ArrayList<Bebida> bebidas; // Agregación
+    public ArrayList<Platillo> platillos; // Agregación
 
     public Orden(int hora, String mesero) {
         this.hora = hora;
